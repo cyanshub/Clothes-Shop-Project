@@ -92,10 +92,90 @@ a {
 
 
 /***** 制定 header 樣式 *****/
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffffa5;   /*a5指定半透明*/;
+  
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
+
+
+  /* 定位相關 */
+  position: fixed;
+  z-index: 10;
+  text-align: center;
+
+  /* 設定排版: grid system */
+  display: grid;
+  grid-template-columns: 250px minmax(300px,3fr) 1fr;
+  grid-template-rows: 60px;
+}
+
+.nav-icon-0 {
+  height: 100%;
+ 
+    align-items: center;
+    justify-content: start;
+    grid-gap: 2rem;
+  grid-column: 1/2;
+}
+
+.navbar-brand {
+  color: #111111;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 60px;
+  margin-right: 1rem;
+
+  /* 設定排版: grid */
+  grid-column: 2/3;
+  justify-content: start;
+}
+
+
+.nav-category {
+  display: none;
+}
+
+.nav-icon-1 {
+  visibility: hidden;
+}
+
+
+.nav-list {
+  /* 設定排版: grid */
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2rem;
+}
+
+.nav-icon-list {
+  /* 設定排版: grid */
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: end;
+  margin-right: 2rem;
+  grid-gap: 1rem;
+}
+
+
+.nav-link {
+  color: #111111;
+}
 
 
 
 /***** 制定 searchbar 樣式 *****/
+.searchbar-wrapper {
+  padding-top: 184px;
+}
 
 
 
@@ -121,9 +201,39 @@ footer{
 
 /***** 撰寫專案共用樣式: 電腦版 *****/
 @media screen and (min-width: 768px) {
+
   /* 共用按鈕樣式 */
   .action {
     font-size: 1.2rem;
     padding: 0.75rem 2rem;
   }
+
+  /***** 制定 header 樣式 *****/
+  /* 設定排版: grid system */
+  .navbar-brand {
+    /* 設定排版: grid */
+     grid-column: 1/2;
+     justify-content: start;
+  }
+
+    .nav-category {
+      display: block;
+      grid-column: 2/3;
+    }
+    
+    .nav-function {
+      grid-column: 3/4;
+    }
+
+    .nav-icon-1 {
+      visibility: visible;
+    }
+
+    
+
+
+
+
+
+
 }

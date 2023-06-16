@@ -1,6 +1,6 @@
 /***** 清除瀏覽器預設樣式 *****/
 /* 載入 google font 字體 */
-@import url('https: //fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
 
 /* 設定 box 計算模式 */
 *,
@@ -89,6 +89,35 @@ a {
   background-repeat: no-repeat;
 }
 
+
+
+/***** 制定 header 樣式 *****/
+
+
+
+/***** 制定 searchbar 樣式 *****/
+
+
+
+/***** 制定 album 樣式 *****/
+
+
+
+/***** 制定 newsletter 樣式 *****/
+
+
+
+/***** 制定 footer 樣式 *****/
+footer{
+  width: 100%;
+  font-size: .2rem;
+  font-weight: 100;
+  padding: .5rem;
+  background-color: #f0f0f0;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 0.9;
+}
 
 /***** 撰寫專案共用樣式: 電腦版 *****/
 @media screen and (min-width: 768px) {

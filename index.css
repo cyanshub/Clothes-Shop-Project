@@ -95,8 +95,10 @@ a {
 header {
   width: 100%;
   height: 60px;
-  background-color: #ffffffa5;   /*a5指定半透明*/;
-  
+  background-color: #ffffffa5;
+  /*a5指定半透明*/
+  ;
+
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.1);
@@ -109,18 +111,15 @@ header {
 
   /* 設定排版: grid system */
   display: grid;
-  grid-template-columns: 250px minmax(300px,3fr) 1fr;
-  grid-template-rows: 60px;
+  grid-template-columns: 20px 50px minmax(300px, 3fr) 50px 50px 10px;
+  grid-template-areas: ". icon1 brand icon2 icon3 .";
+  grid-gap: 1rem;
 }
 
-.nav-icon-0 {
-  height: 100%;
- 
-    align-items: center;
-    justify-content: start;
-    grid-gap: 2rem;
-  grid-column: 1/2;
+.nav {
+  display: none;
 }
+
 
 .navbar-brand {
   color: #111111;
@@ -130,58 +129,39 @@ header {
   margin-right: 1rem;
 
   /* 設定排版: grid */
-  grid-column: 2/3;
-  justify-content: start;
+  grid-area: brand;
+  justify-content: center;
   position: relative;
 
-
+  /* 設定細部排版: 讓 LOGO 圖示置中 */
   display: flex;
   align-items: center;
 }
 
-
-/* 讓 LOGO 圖示置中 */
 .navbar-logo {
   margin-right: 1rem;
- }
-
-
-
-.nav-category {
-  display: none;
-}
-
-.nav-icon-1 {
-  visibility: hidden;
 }
 
 
-.nav-list {
-  /* 設定排版: grid */
-  height: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 2rem;
-}
-
-.nav-icon-list {
-  /* 設定排版: grid */
-  height: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: end;
-  margin-right: 2rem;
-  grid-gap: 1rem;
-}
-
-
-.nav-link {
+.nav-icon {
+  line-height: 60px;
   color: #111111;
 }
 
+.nav-icon-1 {
+  /* 設定排版: grid */
+  grid-area: icon1;
+}
+
+.nav-icon-2 {
+  /* 設定排版: grid */
+  grid-area: icon2;
+}
+
+.nav-icon-3 {
+  /* 設定排版: grid */
+  grid-area: icon3;
+}
 
 
 /***** 制定 searchbar 樣式 *****/
@@ -200,7 +180,7 @@ header {
 
 
 /***** 制定 footer 樣式 *****/
-footer{
+footer {
   width: 100%;
   font-size: .2rem;
   font-weight: 100;
@@ -212,8 +192,7 @@ footer{
 }
 
 /***** 撰寫專案共用樣式: 電腦版 *****/
-@media screen and (min-width: 768px) {
-
+@media screen and (min-width: 960px) {
   /* 共用按鈕樣式 */
   .action {
     font-size: 1.2rem;
@@ -221,31 +200,51 @@ footer{
   }
 
   /***** 制定 header 樣式 *****/
-  /* 設定排版: grid system */
-  .navbar-brand {
-    /* 設定排版: grid */
-     grid-column: 1/2;
-     justify-content: start;
+  /* 調整排版: grid system */
+  header {
+    grid-template-columns: 300px minmax(300px, 3fr) 50px 50px 50px 10px;
+    grid-template-areas: "brand navitem icon1 icon2 icon3 .";
+    grid-gap: 1rem;
   }
 
-    .nav-category {
-      display: block;
-      grid-column: 2/3;
-    }
-    
-    .nav-function {
-      grid-column: 3/4;
-    }
 
-    .nav-icon-1 {
-      visibility: visible;
-    }
+  .navbar-brand {
+    /* 設定排版: grid */
+    justify-content: center;
+    margin-left: 30px;
+  }
 
-    
+
+  .nav {
+    display: block;
+  }
 
 
 
+  .nav-list {
+    grid-area: navitem;
+  }
 
 
+  /* 設定排版: grid */
+  .nav-list {
+    height: 100%;
 
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2rem;
+  }
+
+  /* 設定 nav-item 文字樣式 */
+  .nav-link {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111111;
+  }
+
+  .nav-item {
+    margin: 0 1.4rem;
+  }
 }

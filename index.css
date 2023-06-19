@@ -164,10 +164,35 @@ header {
 }
 
 
-/***** 制定 searchbar 樣式 *****/
-.searchbar-wrapper {
-  padding-top: 184px;
+/***** 制定 selection 樣式 *****/
+.selection-title {
+  padding-top: 120px;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
 }
+
+.selection-wrapper {
+  /* outline: 1px solid black; */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  justify-items: center; 
+}
+
+.selection-wrapper select {
+  width: 80%;
+  max-width: 300px;
+  padding: 8px;
+  margin: 6px;
+  border-radius: 5px;
+  border: 1px solid grey;
+
+  /* 設定文字 */
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 
 
 
@@ -235,6 +260,11 @@ header {
   opacity: 1;
 }
 
+
+.pagination {
+  margin-top: 5rem;
+  text-align: center;
+}
 
 /***** 制定 newsletter 樣式 *****/
 

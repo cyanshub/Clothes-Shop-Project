@@ -172,7 +172,68 @@ header {
 
 
 /***** 制定 album 樣式 *****/
+.album-wrapper {
+  width: 100%;
 
+  /* 設定排版 */
+  display: grid;
+  /* grid-template-columns: repeat(4,1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-gap:3rem 1.5rem;
+
+}
+
+/* 定義圖卡呈現樣式 */
+.card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 超過容器的圖片隱藏 */
+
+  /* 定義位置 */
+  position: relative;
+}
+
+/* 定義相片呈現樣式 */
+.card-img {
+  width: 100%;
+  height: 350px;
+  
+  display: block;
+  object-fit: cover; /* 置換 html 圖片時不要變形 */
+}
+
+/* 定義文案樣式 */
+.card-text {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.card-title {
+  margin-bottom: 0.2rem;
+  font-weight: 400;
+}
+
+.card-description {
+  font-weight: 700;
+}
+
+
+/* 設計圖片轉場 */
+.card-img {
+  opacity: 0;
+
+  /* 設定漸變 transition */
+  transition: opacity .2s ease-out;
+}
+
+.card .background-image {
+  background-image: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/14362/t-shirt.png");
+}
+
+
+.card:hover .card-img{
+  opacity: 1;
+}
 
 
 /***** 制定 newsletter 樣式 *****/

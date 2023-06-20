@@ -287,13 +287,9 @@ header {
 
   background-image: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/14376/template.png");
   height: 230px;
-}
 
-.newsletter-info {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: center;
+  justify-items: center;
+  align-content: center;
 }
 
 

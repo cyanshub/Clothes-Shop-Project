@@ -69,7 +69,7 @@ a {
 /* 區塊 */
 .container {
   width: 85%;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 3rem auto;
 }
 
 /* 共用按鈕樣式 */

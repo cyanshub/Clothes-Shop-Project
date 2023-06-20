@@ -313,8 +313,8 @@ header {
 }
 
 .subscript {
-  width: 45%;
-  min-width: 450px;
+  width: 44%;
+  min-width: 360px;
   padding-left: 20px;
   background: white;
   border-radius: 25px;
